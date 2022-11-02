@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tree
+  - Rock
+  - Item
+  - Twig
+  - NPC
+  - Grass
+  - Shop
   layers:
   - Default
   - TransparentFX
