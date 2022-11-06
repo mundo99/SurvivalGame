@@ -78,9 +78,7 @@ public class PlayerController : MonoBehaviour {
         TryCrouch();
         Move();
         Interation();
-
-
-        if (!Inventory.inventoryActivated)
+        if (!Inventory.inventoryActivated && ShopActivated == false)
         {
             CameraRotation();
             CharacterRotation();
@@ -313,6 +311,7 @@ public class PlayerController : MonoBehaviour {
 
     // npc 상호작용
     GameObject nearObject;
+    public static bool ShopActivated = false;
 
     void Interation()
     {
@@ -321,13 +320,13 @@ public class PlayerController : MonoBehaviour {
             {
                 Shop shop = nearObject.GetComponent<Shop>();
                 shop.Enter(this);
+                ShopActivated = true;
             }
     }
     void OnTriggerStay(Collider other)
     {
         if (other.tag == "Shop")
             nearObject = other.gameObject;
-            Debug.Log("npc입장");
     }
     void OnTriggerExit(Collider other)
     {
@@ -336,6 +335,7 @@ public class PlayerController : MonoBehaviour {
                 Shop shop = nearObject.GetComponent<Shop>();
                 shop.Exit();
                 nearObject = null;
+                ShopActivated = false;
         }   
     }
 

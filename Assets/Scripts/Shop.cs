@@ -18,6 +18,7 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     public void Exit() // ³ª°¡±â
     {
-        uiGroup.anchoredPosition = Vector3.down * 1000; 
+        uiGroup.anchoredPosition = Vector3.down * 1000;
+        PlayerController.ShopActivated = false;
     }
 }
