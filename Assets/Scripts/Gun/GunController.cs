@@ -44,6 +44,9 @@ public class GunController : MonoBehaviour {
     [SerializeField]
     private GameObject hit_effect_prefab;
 
+
+    private PlayerController Player;
+
     void Start()
     {
         originPos = Vector3.zero;
@@ -57,7 +60,7 @@ public class GunController : MonoBehaviour {
 
 
 	void Update () {
-        if (isActivate)
+        if (isActivate && PlayerController.ShopActivated == false && !Inventory.inventoryActivated)
         {
             GunFireRateCalc();
             TryFire();

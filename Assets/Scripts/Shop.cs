@@ -9,14 +9,14 @@ public class Shop : MonoBehaviour
     PlayerController enterPlayer;
 
     // Start is called before the first frame update
-    public void Enter(PlayerController player) // 입장
+    public void Enter(PlayerController player) 
     {
-        enterPlayer = player; // 플레이어 정보 저장
+        enterPlayer = player; 
         uiGroup.anchoredPosition = Vector3.zero; // ui화면 중앙으로
     }
 
     // Update is called once per frame
-    public void Exit() // 나가기
+    public void Exit() 
     {
         uiGroup.anchoredPosition = Vector3.down * 1000;
         PlayerController.ShopActivated = false;
