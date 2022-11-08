@@ -76,13 +76,17 @@ public class PlayerController : MonoBehaviour {
         TryJump();
         TryRun();
         TryCrouch();
-        Move();
         Interation();
+        if (ShopActivated == false)
+        {
+            Move();
+        }
         if (!Inventory.inventoryActivated && ShopActivated == false)
         {
             CameraRotation();
             CharacterRotation();
         }
+        
 	}
     void FixedUpdate()
     {
