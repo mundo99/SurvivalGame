@@ -12,7 +12,7 @@ public class Shop : MonoBehaviour
     public void Enter(PlayerController player) 
     {
         enterPlayer = player; 
-        uiGroup.anchoredPosition = Vector3.zero; // uiÈ­¸é Áß¾ÓÀ¸·Î
+        uiGroup.anchoredPosition = Vector3.zero; // uiÈ­ï¿½ï¿½ ï¿½ß¾ï¿½ï¿½ï¿½ï¿½ï¿½
     }
 
     // Update is called once per frame
@@ -20,5 +20,11 @@ public class Shop : MonoBehaviour
     {
         uiGroup.anchoredPosition = Vector3.down * 1000;
         PlayerController.ShopActivated = false;
+    }
+
+        public void Back() 
+    {
+        uiGroup.anchoredPosition = Vector3.down * 1000;
+        PlayerController.ShopActivated = true;
     }
 }

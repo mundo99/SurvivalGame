@@ -342,5 +342,14 @@ public class PlayerController : MonoBehaviour {
                 ShopActivated = false;
         }   
     }
+        void OnTriggerBack(Collider other)
+    {
+            if (other.tag == "Shop")
+            {
+                Shop shop = nearObject.GetComponent<Shop>();
+                shop.Exit();
+                nearObject = null;
+        }   
+    }
 
 }
